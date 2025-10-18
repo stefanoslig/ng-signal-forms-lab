@@ -3,13 +3,14 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
     "outDir": "./out-tsc/app",
-    "types": [],
+    "types": []
   },
   "include": [
     "src/**/*.ts"
   ],
   "exclude": [
     "src/**/*.spec.ts"
-  ],
+  ]
 }

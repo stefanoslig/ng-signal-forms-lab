@@ -12,30 +12,44 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "iw",
+      "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular/build:application",
+          "builder": "@ng-doc/builder:application",
           "options": {
             "browser": "src/main.ts",
             "polyfills": [
               "zone.js"
             ],
-            "stylePreprocessorOptions": {
-              "includePaths": [
-                "node_modules"
-              ]
-            },
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
+              {
+                "glob": "**/*",
+                "input": "node_modules/@ng-doc/app/assets",
+                "output": "assets/ng-doc/app"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/@ng-doc/ui-kit/assets",
+                "output": "assets/ng-doc/ui-kit"
+              },
+              {
+                "glob": "**/*",
+                "input": "ng-doc/ng-signal-forms-lab/assets",
+                "output": "assets/ng-doc"
+              },
               {
                 "glob": "**/*",
                 "input": "public"
               }
             ],
             "styles": [
+              "node_modules/@ng-doc/app/styles/global.css",
               "src/styles.scss"
+            ],
+            "allowedCommonJsDependencies": [
+              "@ng-doc/core"
             ]
           },
           "configurations": {
@@ -44,7 +58,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "500kB",
-                  "maximumError": "1MB"
+                  "maximumError": "2MB"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -52,30 +66,18 @@
                   "maximumError": "8kB"
                 }
               ],
-              "outputHashing": "all",
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ]
+              "outputHashing": "all"
             },
             "development": {
               "optimization": false,
               "extractLicenses": false,
-              "sourceMap": true,
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.dev.ts"
-                }
-              ]
+              "sourceMap": true
             }
           },
           "defaultConfiguration": "production"
         },
         "serve": {
-          "builder": "@angular/build:dev-server",
+          "builder": "@ng-doc/builder:dev-server",
           "configurations": {
             "production": {
               "buildTarget": "ng-signal-forms-lab:build:production"
@@ -108,33 +110,8 @@
               "src/styles.scss"
             ]
           }
-        },
-        "lint": {
-          "builder": "@angular-eslint/builder:lint",
-          "options": {
-            "lintFilePatterns": [
-              "src/**/*.ts",
-              "src/**/*.html"
-            ]
-          }
-        },
-        "e2e": {
-          "builder": "playwright-ng-schematics:playwright",
-          "options": {
-            "devServerTarget": "ng-signal-forms-lab:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "ng-signal-forms-lab:serve:production"
-            }
-          }
         }
       }
     }
-  },
-  "cli": {
-    "schematicCollections": [
-      "angular-eslint"
-    ]
   }
 }

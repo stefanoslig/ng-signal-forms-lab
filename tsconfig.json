@@ -3,8 +3,14 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
-    "esModuleInterop": true,
+    "paths": {
+      "@ng-doc/generated": [
+        "./ng-doc/ng-signal-forms-lab/index.ts"
+      ],
+      "@ng-doc/generated/*": [
+        "./ng-doc/ng-signal-forms-lab/*"
+      ]
+    },
     "strict": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
@@ -15,9 +21,7 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "target": "ES2022",
-    "module": "preserve",
-    "paths": {
-  },
+    "module": "preserve"
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
@@ -34,5 +38,5 @@
     {
       "path": "./tsconfig.spec.json"
     }
-  ],
+  ]
 }
