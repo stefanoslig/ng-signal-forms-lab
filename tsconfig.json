@@ -4,12 +4,8 @@
   "compileOnSave": false,
   "compilerOptions": {
     "paths": {
-      "@ng-doc/generated": [
-        "./ng-doc/ng-signal-forms-lab/index.ts"
-      ],
-      "@ng-doc/generated/*": [
-        "./ng-doc/ng-signal-forms-lab/*"
-      ]
+      "@ng-doc/generated": ["./ng-doc/ng-signal-forms-lab/index.ts"],
+      "@ng-doc/generated/*": ["./ng-doc/ng-signal-forms-lab/*"]
     },
     "strict": true,
     "noImplicitOverride": true,

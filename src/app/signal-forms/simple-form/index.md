@@ -1,5 +1,11 @@
 ---
+title: Simple Form
+route: simple-form
 keyword: SimpleFormPage
 ---
 
-It's time to write some awesome docs!
+#### Simple form
+
+my text
+
+{{ NgDocActions.demo("SimpleForm") }}
