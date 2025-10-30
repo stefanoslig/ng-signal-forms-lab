@@ -1,6 +1,5 @@
 ---
 title: Simple Form
-route: simple-form
 keyword: SimpleFormPage
 ---
 
