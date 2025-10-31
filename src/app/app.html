@@ -1,7 +1,33 @@
-<ng-doc-root>
-  <ng-doc-navbar>
-    <h3 style="margin: 0" ngDocNavbarLeft>MyAwesomeDoc</h3>
+<ng-doc-root
+  [sidebar]="!isLandingPage"
+  [noWidthLimit]="isLandingPage"
+  [footerContent]="footerContent"
+>
+  <ng-doc-navbar [hamburger]="!isLandingPage">
+    <a class="brand" routerLink="/" ngDocNavbarLeft>
+      <h3>
+        <img src="assets/images/angular-icon.svg" />
+        <span class="brand-title-ng">Ng Signal Forms Lab</span>
+      </h3>
+    </a>
+    <div class="ng-doc-header-controls" ngDocNavbarRight>
+      <ng-doc-theme-toggle></ng-doc-theme-toggle>
+      <a
+        href=""
+        ng-doc-button-icon
+        ngDocTooltip="Repository on GitHub"
+        size="large"
+        target="_blank"
+      >
+        <ng-doc-icon [size]="24" customIcon="github"></ng-doc-icon>
+      </a>
+    </div>
   </ng-doc-navbar>
+
   <ng-doc-sidebar></ng-doc-sidebar>
   <router-outlet></router-outlet>
+
+  <ng-template #footerContent>
+    <div class="ng-doc-footer">MIT © 2025 Stefanos Lignos</div>
+  </ng-template>
 </ng-doc-root>
