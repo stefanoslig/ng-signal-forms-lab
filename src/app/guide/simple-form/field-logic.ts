@@ -21,7 +21,7 @@ export class FieldLogic {
     }),
     schema<MyDataModel>((path: FieldPath<MyDataModel>) => {
       required(path.firstName);
-      disabled(path.lastName);
+      disabled(path.lastName, 'Last name cannot be changed');
     }),
   );
 }

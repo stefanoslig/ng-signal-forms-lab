@@ -1,9 +1,7 @@
 ---
-title: Simple Form
-keyword: SimpleFormPage
+title: Signal Forms - Core Concepts
+keyword: CoreConceptsPage
 ---
-
-## Introduction to Signal Forms
 
 ### Data Model
 
@@ -48,21 +46,34 @@ Now that every field node is synchronized with the corresponding UI element usin
 | validation errors (field's subtree) | Logic that produces synchronous validation errors for the field's subtree.   |
 | asynchronous validation errros      | Logic that produces asynchronous validation results (errors or `'pending'`). |
 
-To add logic like this to our form we need to use a `Schema`. In the `Schema` we declaretively define the logic of our form. You can think the `Schema` as a function that accepts a `FieldPath` and defines logic for it.
+To add logic like this to our form we need to use a `Schema`. In the `Schema` we declaretively define the logic of our form. You can think the `Schema` as a function that accepts a `FieldPath` and defines the logic for it.
 
 > **Note**
-> `FieldPath<T>` is an object that represents a location in the `FieldTree` form structure and is used to bind logic to a particular part of the structure prior to the creation of the form. Because the `FieldPath` exists prior to the form's creation, it cannot be used to access any of the field state.
+> `FieldPath<T>` is an object that represents a location in the `FieldTree` form structure and is used to bind logic to a particular part of the structure prior to the creation of the form.
 
-//make it a table
-value: A WritableSignal representing the current value of the field.
-valid: A Signal indicating whether the field and its descendants are currently valid.
-errors: A Signal containing the list of FormError associated with the field. (A FormError is any object of type {kind: string, message?: string}).
-disabled: A Signal indicating whether the field or any of its parents are disabled.
-disabledReasons: A Signal indicating containing a list of reasons for the current field's disablement. Each reason consists of both the field that is the source of the disablement (the current field or one of its parents), as well as an optional reason string that may be shown to the user.
-touched: A Signal indicating whether the user has interacted with the field or any of its descendants.
+![Create form](assets/images/form-schema.png)
 
-Based on the Field Logic we have defined, we get the Field state 
+### Field State
+
+Based on the `Field Logic` we have defined using the `Schema`, we get the `Field State`. The `Field State` includes the following state which is derived from the `Field Logic`:
+
+| Field State       | Description                                                                                                      |
+| ----------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `errors`          | A signal containing the current errors for the field.                                                            |
+| `invalid`         | A signal indicating whether the field is valid. _(Note: `true` means invalid)_                                   |
+| `disabled`        | A signal indicating whether the field is currently disabled.                                                     |
+| `disabledReasons` | A signal containing the reasons why the field is currently disabled.                                             |
+| `max`             | A signal indicating the field's maximum value, if applicable (numeric/date inputs & custom controls).            |
+| `maxLength`       | A signal indicating the field's maximum string length, if applicable (`<input>`, `<textarea>`, custom controls). |
+| `min`             | A signal indicating the field's minimum value, if applicable (numeric/date inputs & custom controls).            |
+| `minLength`       | A signal indicating the field's minimum string length, if applicable (`<input>`, `<textarea>`, custom controls). |
+| `name`            | A signal containing the field's unique name, typically based on its parent field name.                           |
+| `pattern`         | A signal indicating patterns the field must match (array of RegExp).                                             |
+| `readonly`        | A signal indicating whether the field is currently readonly.                                                     |
+| `required`        | A signal indicating whether the field is required.                                                               |
+| `touched`         | A signal indicating whether the field has been touched by the user.                                              |
+| `value`           | A writable signal containing the field’s value; updates sync with the bound data model.                          |
+
+To access the state associated with a field, call it as a function as you can see in the following demo:
 
 {{ NgDocActions.demo("FieldLogic") }}
-
-{{ NgDocActions.demo("SimpleForm") }}
