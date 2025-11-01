@@ -57,6 +57,12 @@ To add logic like this to our form we need to use a `Schema`. In the `Schema` we
 
 Based on the `Field Logic` we have defined using the `Schema`, we get the `Field State`. The `Field State` includes the following state which is derived from the `Field Logic`:
 
+To access the state associated with a field, call it as a function as you can see in the following demo:
+
+{{ NgDocActions.demo("FieldLogic") }}
+
+Here is a reference of all the available Field states we can get:
+
 | Field State       | Description                                                                                                      |
 | ----------------- | ---------------------------------------------------------------------------------------------------------------- |
 | `errors`          | A signal containing the current errors for the field.                                                            |
@@ -74,6 +80,3 @@ Based on the `Field Logic` we have defined using the `Schema`, we get the `Field
 | `touched`         | A signal indicating whether the field has been touched by the user.                                              |
 | `value`           | A writable signal containing the field’s value; updates sync with the bound data model.                          |
 
-To access the state associated with a field, call it as a function as you can see in the following demo:
-
-{{ NgDocActions.demo("FieldLogic") }}
