@@ -79,4 +79,3 @@ Here is a reference of all the available Field states we can get:
 | `required`        | A signal indicating whether the field is required.                                                               |
 | `touched`         | A signal indicating whether the field has been touched by the user.                                              |
 | `value`           | A writable signal containing the field’s value; updates sync with the bound data model.                          |
-

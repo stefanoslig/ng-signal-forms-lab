@@ -1,10 +1,10 @@
 import { NgDocCategory } from '@ng-doc/core';
 
 const FieldLogicCategory: NgDocCategory = {
-  title: 'Field Logic',
+  title: 'Field Logic 🚧',
   expandable: true,
-  expanded: true,
-  order: 2,
+  expanded: false,
+  order: 3,
 };
 
 export default FieldLogicCategory;

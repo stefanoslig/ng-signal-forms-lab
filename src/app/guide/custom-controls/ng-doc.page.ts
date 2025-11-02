@@ -1,9 +1,12 @@
 import { NgDocPage } from '@ng-doc/core';
+import { Slider } from './demos/slider';
+import { CustomControlDemo } from './demos/custom-control-demo';
 
 const CustomControlsPage: NgDocPage = {
   title: 'Custom Controls',
   mdFile: ['./index.md'],
-  order: 3,
+  demos: { Slider, CustomControlDemo },
+  order: 2,
 };
 
 export default CustomControlsPage;

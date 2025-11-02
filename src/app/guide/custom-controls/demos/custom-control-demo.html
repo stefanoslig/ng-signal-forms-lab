@@ -1,0 +1,13 @@
+<form class="section">
+  <div class="mb-2 flex gap-2">
+    <input [field]="myForm.disableForm" id="disable-form-checkbox" type="checkbox" class="mb-2" />
+    <label class="input-label" for="disable-form-checkbox"> Disable Form </label>
+  </div>
+  <div class="mb-2">
+    <slider [field]="myForm.range" [title]="'Range'" />
+  </div>
+</form>
+
+<div class="section">
+  <pre><code>{{ myForm().value() | json }}</code></pre>
+</div>

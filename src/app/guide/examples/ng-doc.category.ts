@@ -1,9 +1,9 @@
 import { NgDocCategory } from '@ng-doc/core';
 
 const ExamplesCategory: NgDocCategory = {
-  title: 'Examples',
+  title: 'Examples 🚧',
   expandable: true,
-  expanded: true,
+  expanded: false,
   order: 4,
 };
 

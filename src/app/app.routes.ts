@@ -4,5 +4,5 @@ export const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./guide/guide.routes'),
-  }
+  },
 ];
