@@ -11,15 +11,38 @@ In the same way as with native UI controls, the `[field]` directive creates a tw
 
 In the following example we can see how easy is to implement a Custom Control and to integrate it in our form. We start by creating a simple slider component:
 
-```typescript {17} file="./demos/slider.ts"#L4-
+```typescript {22, 23} file="./demos/slider.ts"#L4-
 
 ```
 
 The `FormValueControl` interface requires a value property and it's the only mandatory property. Although the contract supports additional properties such as `errors`, `disabled`, `required`, etc, only `value` must be implemented. The `value` property should be a `ModelSignal`. In this way, the `[Field]` directive can keep in sync the value of the Custom Control with the value of the bound `FieldTree`.
 
 > **Note**
-> Similarly, for the `FormCheckboxControl` contract, the only required property is `checked`. 
+> Similarly, for the `FormCheckboxControl` contract, the only required property is `checked`.
 
-By implementing the `FormValueControl` contract and by adding the `value` property we can now integrate this slider custom control with the form as we can see in the following demo.
+The `FormValueControl` and the `FormCheckboxControl` contracts include also a number of other optional set of properties that you can implement (you can find the full list of these proporties in the following table). The only thing you have to do is to add the corresponding property in your custom control. All of them as you can see are input signals (except `touched` which is model signal). The `Field` directive will update automatically the value of all these input/model signals for you.
+
+| Property        | Type                                                               |
+| --------------- | ------------------------------------------------------------------ |
+| errors          | InputSignal<ValidationError>[]>                                    |
+| disabled        | InputSignal<boolean>                                               |
+| disabledReasons | InputSignal<DisabledReason>[]>                                     |
+| readonly        | InputSignal<boolean>                                               |
+| hidden          | InputSignal<boolean>                                               |
+| invalid         | InputSignal<boolean>                                               |
+| pending         | InputSignal<boolean>                                               |
+| touched         | ModelSignal<boolean> \| InputSignal<boolean> \| OutputRef<boolean> |
+| dirty           | InputSignal<boolean>                                               |
+| name            | InputSignal<string>                                                |
+| required        | InputSignal<boolean>                                               |
+| min             | InputSignal<number \| undefined>                                   |
+| minLength       | InputSignal<number \| undefined>                                   |
+| max             | InputSignal<number \| undefined>                                   |
+| maxLength       | InputSignal<number \| undefined>                                   |
+| pattern         | InputSignal<RegExp[]>                                              |
+
+### Demo
+
+In this demo, you can see how the custom `Slider` control integrates with our form. In addition to the `value` property, we've also implemented a `disabled` property to demonstrate synchronization of other control states as well.
 
 {{ NgDocActions.demo("CustomControlDemo") }}

@@ -13,9 +13,13 @@ import { FormValueControl } from '@angular/forms/signals';
       class="input-slider"
     />
   `,
+  host: {
+    '[class.disabled]': 'disabled()',
+  },
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Slider implements FormValueControl<number> {
   readonly title = input.required<string>();
   readonly value = model(0);
+  readonly disabled = input(false);
 }
