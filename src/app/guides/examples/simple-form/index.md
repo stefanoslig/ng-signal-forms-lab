@@ -2,4 +2,6 @@
 keyword: SimpleFormPage
 ---
 
-It's time to write some awesome docs!
+### Login form example
+
+{{ NgDocActions.demoPane("SimpleForm") }}

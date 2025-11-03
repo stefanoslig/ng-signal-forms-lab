@@ -9,6 +9,9 @@
       placeholder="Username"
       autocomplete="username"
     />
+     @for (error of loginForm.username().errors(); track $index) {
+      <p class="input-error">{{ error.message }}</p>
+    }
   </div>
   <div class="mb-6">
     <label class="input-label" for="password"> Password </label>
@@ -20,10 +23,12 @@
       placeholder="Password"
       autocomplete="current-password"
     />
-    <p class="input-error">Please choose a password.</p>
+    @for (error of loginForm.password().errors(); track $index) {
+      <p class="input-error">{{ error.message }}</p>
+    }
   </div>
   <div class="flex items-center justify-between">
-    <button class="btn-primary" type="button">Sign In</button>
+    <button class="btn-primary" type="button" [disabled]="loginForm().invalid()">Sign In</button>
     <a class="link" href="#"> Forgot Password? </a>
   </div>
 </form>
