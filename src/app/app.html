@@ -3,26 +3,28 @@
   [noWidthLimit]="isLandingPage"
   [footerContent]="footerContent"
 >
-  <ng-doc-navbar [hamburger]="!isLandingPage">
-    <a class="brand" routerLink="/" ngDocNavbarLeft>
-      <h3>
-        <img src="assets/images/angular-icon.svg" />
-        <span class="brand-title-ng">Signal Forms Guide</span>
-      </h3>
-    </a>
-    <div class="ng-doc-header-controls" ngDocNavbarRight>
-      <ng-doc-theme-toggle></ng-doc-theme-toggle>
-      <a
-        href="https://github.com/stefanoslig/ng-signal-forms-lab"
-        ng-doc-button-icon
-        ngDocTooltip="Repository on GitHub"
-        size="large"
-        target="_blank"
-      >
-        <ng-doc-icon [size]="24" customIcon="github"></ng-doc-icon>
+  @if (!isLandingPage) {
+    <ng-doc-navbar [hamburger]="!isLandingPage">
+      <a class="brand" routerLink="/" ngDocNavbarLeft>
+        <h3>
+          <img src="assets/images/angular-icon.svg" />
+          <span class="brand-title-ng">Signal Forms Guide</span>
+        </h3>
       </a>
-    </div>
-  </ng-doc-navbar>
+      <div class="ng-doc-header-controls" ngDocNavbarRight>
+        <ng-doc-theme-toggle></ng-doc-theme-toggle>
+        <a
+          href="https://github.com/stefanoslig/ng-signal-forms-lab"
+          ng-doc-button-icon
+          ngDocTooltip="Repository on GitHub"
+          size="large"
+          target="_blank"
+        >
+          <ng-doc-icon [size]="24" customIcon="github"></ng-doc-icon>
+        </a>
+      </div>
+    </ng-doc-navbar>
+  }
 
   <ng-doc-sidebar></ng-doc-sidebar>
   <router-outlet></router-outlet>

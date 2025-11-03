@@ -24,9 +24,9 @@ The `FormValueControl` and the `FormCheckboxControl` contracts include also a nu
 
 | Property        | Type                                                               |
 | --------------- | ------------------------------------------------------------------ |
-| errors          | InputSignal<ValidationError[]>                                    |
+| errors          | InputSignal<ValidationError[]>                                     |
 | disabled        | InputSignal<boolean>                                               |
-| disabledReasons | InputSignal<DisabledReason[]>                                     |
+| disabledReasons | InputSignal<DisabledReason[]>                                      |
 | readonly        | InputSignal<boolean>                                               |
 | hidden          | InputSignal<boolean>                                               |
 | invalid         | InputSignal<boolean>                                               |

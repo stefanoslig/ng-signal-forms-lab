@@ -45,3 +45,7 @@ fieldset legend {
   @apply opacity-50 cursor-not-allowed;
   pointer-events: none;
 }
+
+.gradient {
+  background: linear-gradient(90deg, #d53369 0%, #daae51 100%);
+}

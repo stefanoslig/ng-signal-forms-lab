@@ -48,6 +48,9 @@
           },
           "configurations": {
             "production": {
+              "ngDoc": {
+                "config": "ng-doc.config.ts"
+              },
               "budgets": [
                 {
                   "type": "initial",
@@ -63,6 +66,9 @@
               "outputHashing": "all"
             },
             "development": {
+              "ngDoc": {
+                "config": "ng-doc.config.ts"
+              },
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
