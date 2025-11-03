@@ -11,7 +11,7 @@ In the same way as with native UI controls, the `[field]` directive creates a tw
 
 In the following example we can see how easy is to implement a Custom Control and to integrate it in our form. We start by creating a simple slider component:
 
-```typescript {22, 23} file="./demos/slider.ts"#L4-
+```typescript {21, 22} file="./demos/slider.ts"#L4-
 
 ```
 
@@ -24,9 +24,9 @@ The `FormValueControl` and the `FormCheckboxControl` contracts include also a nu
 
 | Property        | Type                                                               |
 | --------------- | ------------------------------------------------------------------ |
-| errors          | InputSignal<ValidationError>[]>                                    |
+| errors          | InputSignal<ValidationError[]>                                    |
 | disabled        | InputSignal<boolean>                                               |
-| disabledReasons | InputSignal<DisabledReason>[]>                                     |
+| disabledReasons | InputSignal<DisabledReason[]>                                     |
 | readonly        | InputSignal<boolean>                                               |
 | hidden          | InputSignal<boolean>                                               |
 | invalid         | InputSignal<boolean>                                               |
