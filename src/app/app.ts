@@ -5,7 +5,7 @@ import {
   NgDocThemeToggleComponent,
 } from '@ng-doc/app';
 import { Component, inject } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { NgDocIconComponent } from '@ng-doc/ui-kit';
 import { Location } from '@angular/common';
 
@@ -18,6 +18,7 @@ import { Location } from '@angular/common';
     NgDocSidebarComponent,
     NgDocIconComponent,
     NgDocThemeToggleComponent,
+    RouterLink
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss',
