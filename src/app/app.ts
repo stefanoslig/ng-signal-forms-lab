@@ -18,7 +18,7 @@ import { Location } from '@angular/common';
     NgDocSidebarComponent,
     NgDocIconComponent,
     NgDocThemeToggleComponent,
-    RouterLink
+    RouterLink,
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss',

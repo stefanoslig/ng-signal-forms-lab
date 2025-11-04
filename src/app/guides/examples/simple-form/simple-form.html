@@ -1,15 +1,15 @@
-<form class="section">
+<form class="section" (submit)="submitForm($event)">
   <div class="mb-4">
-    <label class="input-label" for="username"> Username </label>
+    <label class="input-label" for="email"> Email </label>
     <input
-      [field]="loginForm.username"
+      [field]="loginForm.email"
       class="input-field"
-      id="username"
-      type="text"
-      placeholder="Username"
-      autocomplete="username"
+      id="email"
+      type="email"
+      placeholder="Email"
+      autocomplete="email"
     />
-     @for (error of loginForm.username().errors(); track $index) {
+    @for (error of loginForm.email().errors(); track $index) {
       <p class="input-error">{{ error.message }}</p>
     }
   </div>
@@ -28,7 +28,13 @@
     }
   </div>
   <div class="flex items-center justify-between">
-    <button class="btn-primary" type="button" [disabled]="loginForm().invalid()">Sign In</button>
+    <button
+      class="btn-primary"
+      type="submit"
+      [disabled]="loginForm().invalid() || loginForm().submitting()"
+    >
+      Sign In
+    </button>
     <a class="link" href="#"> Forgot Password? </a>
   </div>
 </form>
