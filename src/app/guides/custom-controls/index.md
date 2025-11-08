@@ -45,4 +45,4 @@ The `FormValueControl` and the `FormCheckboxControl` contracts include also a nu
 
 In this demo, you can see how the custom `Slider` control integrates with our form. In addition to the `value` property, we've also implemented a `disabled` property to demonstrate synchronization of other control states as well.
 
-{{ NgDocActions.demo("CustomControlDemo") }}
+{{ NgDocActions.demo("CustomControlDemo", {expanded: true}) }}

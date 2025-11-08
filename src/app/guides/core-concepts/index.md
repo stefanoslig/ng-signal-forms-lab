@@ -31,7 +31,7 @@ This directive will:
 - Create a two way binding between the native UI element's value and the form field's value.
 - Synchronize the field state (disabled, touched, required, etc.) with the native UI element.
 
-{{ NgDocActions.demo("FieldTree") }}
+{{ NgDocActions.demo("FieldTree", {expanded: true}) }}
 
 ### Field Logic
 
@@ -59,7 +59,7 @@ Based on the `Field Logic` we have defined using the `Schema`, we get the `Field
 
 To access the state associated with a field, call it as a function as you can see in the following demo:
 
-{{ NgDocActions.demo("FieldLogic") }}
+{{ NgDocActions.demo("FieldLogic", {expanded: true}) }}
 
 Here is a reference of all the available Field states we can get:
 
