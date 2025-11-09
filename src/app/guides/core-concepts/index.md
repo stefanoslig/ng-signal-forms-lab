@@ -51,22 +51,22 @@ To add logic like this to our form we need to use a `Schema`. In the `Schema` we
 > **Note**
 > `FieldPath<T>` is an object that represents a location in the `FieldTree` form structure and is used to bind logic to a particular part of the structure prior to the creation of the form.
 
-![Create form](assets/images/form-schema.png)
+![Create Schema](assets/images/form-schema.png)
+
+**_We explore the Field Logic topic in depth in the next [section](https://signal-forms.guide/guides/field-logic/schema-composition), with additional examples and detailed explanations._**
 
 ### Field State
 
-Based on the `Field Logic` we have defined using the `Schema`, we get the `Field State`. The `Field State` includes the following state which is derived from the `Field Logic`:
-
-To access the state associated with a field, call it as a function as you can see in the following demo:
+Based on the `Field Logic` we have defined using the `Schema`, we get the `Field State`. To access the state associated with a field, call it as a function as you can see in the following demo:
 
 {{ NgDocActions.demo("FieldLogic", {expanded: true}) }}
 
-Here is a reference of all the available Field states we can get:
+The `Field State` includes the following state which is derived from the `Field Logic`. Here is a reference of all the available Field states we can get:
 
 | Field State       | Description                                                                                                      |
 | ----------------- | ---------------------------------------------------------------------------------------------------------------- |
 | `errors`          | A signal containing the current errors for the field.                                                            |
-| `invalid`         | A signal indicating whether the field is valid. _(Note: `true` means invalid)_                                   |
+| `invalid`         | A signal indicating whether the field is valid.                                                                  |
 | `disabled`        | A signal indicating whether the field is currently disabled.                                                     |
 | `disabledReasons` | A signal containing the reasons why the field is currently disabled.                                             |
 | `max`             | A signal indicating the field's maximum value, if applicable (numeric/date inputs & custom controls).            |
