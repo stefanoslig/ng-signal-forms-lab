@@ -1,14 +1,5 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
-import {
-  customError,
-  email,
-  Field,
-  FieldPath,
-  form,
-  required,
-  schema,
-  submit,
-} from '@angular/forms/signals';
+import { customError, email, Field, form, required, schema, submit } from '@angular/forms/signals';
 import { delay, firstValueFrom, of } from 'rxjs';
 
 interface LoginForm {
@@ -26,10 +17,10 @@ interface LoginForm {
 export class SimpleForm {
   protected readonly loginForm = form(
     signal<LoginForm>({ email: '', password: '' }),
-    schema<LoginForm>((path: FieldPath<LoginForm>) => {
-      required(path.email, { message: 'Email is required' });
-      required(path.password, { message: 'Password is required' });
-      email(path.email, { message: 'Invalid email format' });
+    schema<LoginForm>((schemaPath) => {
+      required(schemaPath.email, { message: 'Email is required' });
+      required(schemaPath.password, { message: 'Password is required' });
+      email(schemaPath.email, { message: 'Invalid email format' });
     }),
   );
 

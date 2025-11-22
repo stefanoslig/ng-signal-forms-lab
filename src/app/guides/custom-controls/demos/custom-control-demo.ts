@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
-import { disabled, Field, FieldPath, form, schema } from '@angular/forms/signals';
+import { disabled, Field, form, schema } from '@angular/forms/signals';
 import { Slider } from './slider';
 import { JsonPipe } from '@angular/common';
 
@@ -20,9 +20,9 @@ export class CustomControlDemo {
       disableForm: false,
       range: 0,
     }),
-    schema<MyDataModel>((path: FieldPath<MyDataModel>) => {
-      disabled(path.range, ({ valueOf }) => {
-        return valueOf(path.disableForm) ? 'Range cannot be changed' : false;
+    schema<MyDataModel>((schemaPath) => {
+      disabled(schemaPath.range, ({ valueOf }) => {
+        return valueOf(schemaPath.disableForm) ? 'Range cannot be changed' : false;
       });
     }),
   );

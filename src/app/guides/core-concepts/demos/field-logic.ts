@@ -1,6 +1,6 @@
 import { JsonPipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
-import { disabled, Field, FieldPath, form, required, schema } from '@angular/forms/signals';
+import { disabled, Field, form, required, schema } from '@angular/forms/signals';
 
 interface MyDataModel {
   firstName: string;
@@ -19,9 +19,9 @@ export class FieldLogic {
       firstName: 'Delete me',
       lastName: 'Disabled',
     }),
-    schema<MyDataModel>((path: FieldPath<MyDataModel>) => {
-      required(path.firstName);
-      disabled(path.lastName, 'Last name cannot be changed');
+    schema<MyDataModel>((schemaPath) => {
+      required(schemaPath.firstName);
+      disabled(schemaPath.lastName, 'Last name cannot be changed');
     }),
   );
 }

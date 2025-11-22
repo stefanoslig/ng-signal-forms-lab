@@ -6,7 +6,7 @@ const CustomControlsPage: NgDocPage = {
   title: 'Custom Controls',
   mdFile: ['./index.md'],
   demos: { Slider, CustomControlDemo },
-  order: 2,
+  order: 3,
 };
 
 export default CustomControlsPage;

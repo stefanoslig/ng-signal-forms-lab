@@ -1,6 +1,6 @@
 ---
 title: Signal Forms - Core Concepts
-keyword: CoreConceptsPage
+keyword: CoreConcepts
 ---
 
 ### Data Model
@@ -53,7 +53,7 @@ To add logic like this to our form we need to use a `Schema`. In the `Schema` we
 
 ![Create Schema](assets/images/form-schema.png)
 
-**_We explore the Field Logic topic in depth in the next [section](https://signal-forms.guide/guides/field-logic/schema-composition), with additional examples and detailed explanations._**
+**_We explore the `*FieldLogicPage` topic in depth in the next page, with additional examples and detailed explanations._**
 
 ### Field State
 
