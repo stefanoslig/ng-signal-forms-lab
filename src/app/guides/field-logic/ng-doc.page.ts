@@ -4,7 +4,7 @@ import { FieldLogic } from './demos/field-logic';
 const FieldLogicPage: NgDocPage = {
   title: 'Field Logic',
   mdFile: ['./index.md'],
-  demos: {FieldLogic},
+  demos: { FieldLogic },
   order: 2,
 };
 

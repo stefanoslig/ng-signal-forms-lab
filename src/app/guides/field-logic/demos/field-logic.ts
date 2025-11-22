@@ -16,7 +16,7 @@ export class FieldLogic {
   protected readonly myForm = form(
     signal<MyDataModel>({
       disableForm: false,
-      username: 'Disabled',
+      username: 'My username',
     }),
     schema<MyDataModel>((schemaPath) => {
       disabled(schemaPath.username, ({ valueOf, stateOf, field, value, key, fieldTreeOf }) => {
@@ -28,7 +28,7 @@ export class FieldLogic {
           key: key(),
           fieldTreeOf: fieldTreeOf(schemaPath.disableForm),
         });
-        return valueOf(schemaPath.disableForm) ? 'Range cannot be changed' : false;
+        return valueOf(schemaPath.disableForm) ? 'Username cannot be changed' : false;
       });
     }),
   );
