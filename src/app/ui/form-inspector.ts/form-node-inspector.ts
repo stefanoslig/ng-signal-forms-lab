@@ -10,10 +10,10 @@ import { FieldNode } from './types';
       <summary class="cursor-pointer">
         <span class="font-medium">{{ label() }}</span>
         <span
-          class="ml-2 text-xs px-1.5 py-0.5 rounded border"
-          [class.bg-green-50]="node().valid()"
-          [class.bg-red-50]="node().invalid()"
-          [class.bg-yellow-50]="node().pending()"
+          class="ml-2 text-xs text-gray-950 px-1.5 py-0.5 rounded border"
+          [class.bg-green-300]="node().valid()"
+          [class.bg-red-300]="node().invalid()"
+          [class.bg-yellow-300]="node().pending()"
         >
           valid: {{ node().valid() }} | invalid: {{ node().invalid() }} | pending:
           {{ node().pending() }}
@@ -21,25 +21,26 @@ import { FieldNode } from './types';
       </summary>
 
       <div class="mt-2 grid gap-2 pl-4">
-        <div class="grid grid-cols-[auto,1fr] gap-x-4 gap-y-1 items-start text-gray-600">
+        <div class="grid grid-cols-[auto,1fr] gap-x-4 gap-y-1 items-start text-gray-200">
+          <div>
+            <pre><code>value: {{ node().value() | json }}</code></pre>
+          </div>
           <div>touched: {{ node().touched() }}</div>
           <div>dirty: {{ node().dirty() }}</div>
           <div>hidden: {{ node().hidden() }}</div>
           <div>readonly: {{ node().readonly() }}</div>
           <div>disabled: {{ node().disabled() }}</div>
           <div>
-            reasons: <code>{{ node().disabledReasons() | json }}</code>
+            <pre><code>reasons: {{ node().disabledReasons() | json }}</code></pre>
           </div>
           <div>
-            errors: <code>{{ node().errors() | json }}</code>
+            <pre><code>errors: {{ node().errors() | json }}</code></pre>
           </div>
           <div>
-            errorSummary: <code>{{ node().errorSummary() | json }}</code>
+            <pre><code>errorSummary: {{ node().errorSummary() | json }}</code></pre>
           </div>
           <div>
-            meta:
-            <code>
-              {{
+            <pre><code>meta: {{
                 {
                   min: this.read(node().min),
                   max: this.read(node().max),
@@ -47,12 +48,9 @@ import { FieldNode } from './types';
                   maxLen: this.read(node().maxLength),
                   pattern: this.read(node().pattern),
                   required: this.read(node().required),
-                } | json
+                 } | json
               }}
-            </code>
-          </div>
-          <div>
-            value: <code>{{ node().value() | json }}</code>
+            </code></pre>
           </div>
         </div>
 
@@ -65,7 +63,7 @@ import { FieldNode } from './types';
               </form-node-inspector>
             </div>
           } @empty {
-            <p class="text-xs text-gray-500">— none —</p>
+            <p class="text-xs text-gray-200">— none —</p>
           }
         </div>
       </div>

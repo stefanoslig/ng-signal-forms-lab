@@ -4,4 +4,4 @@ keyword: SimpleFormPage
 
 ### Login form example
 
-{{ NgDocActions.demoPane("SimpleForm") }}
+{{ NgDocActions.demo("SimpleForm", {expanded: true}) }}

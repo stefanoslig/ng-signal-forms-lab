@@ -1,10 +1,6 @@
 @use 'tailwindcss';
 @import '@ng-doc/app/styles/themes/dark.css';
 
-.section {
-  @apply bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4;
-}
-
 .input-field {
   @apply shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight;
 }

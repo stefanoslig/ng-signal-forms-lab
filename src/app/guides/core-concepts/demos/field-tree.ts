@@ -1,6 +1,7 @@
-import { JsonPipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { Field, form } from '@angular/forms/signals';
+import { FormInspectorComponent } from '../../../ui/form-inspector.ts/form-inspector';
+import { DemoLayout } from '../../../ui/demo-layout/demo-layout';
 
 interface MyDataModel {
   firstName: string;
@@ -14,7 +15,7 @@ interface MyDataModel {
 @Component({
   selector: 'field-tree',
   templateUrl: './field-tree.html',
-  imports: [Field, JsonPipe],
+  imports: [Field, FormInspectorComponent, DemoLayout],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FieldTree {

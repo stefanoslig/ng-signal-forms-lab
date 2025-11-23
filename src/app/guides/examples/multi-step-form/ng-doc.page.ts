@@ -5,7 +5,7 @@ const MultiStepFormPage: NgDocPage = {
   title: `Multi-Step Form 🚧`,
   mdFile: './index.md',
   category: ExamplesCategory,
-  order: 4,
+  order: 2,
 };
 
 export default MultiStepFormPage;

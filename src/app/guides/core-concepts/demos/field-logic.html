@@ -1,31 +1,29 @@
-<form class="section">
-  <div class="mb-2">
-    <label class="input-label" for="firstName"> First Name </label>
-    <input
-      [field]="myForm.firstName"
-      class="input-field"
-      id="firstName"
-      type="text"
-      placeholder="First Name"
-      autocomplete="firstName"
-    />
-    @if (myForm.firstName().invalid()) {
-      <p class="input-error">Required field</p>
-    }
-  </div>
-  <div class="mb-2">
-    <label class="input-label" for="lastName"> Last Name </label>
-    <input
-      [field]="myForm.lastName"
-      class="input-field"
-      id="lastName"
-      placeholder="Last Name"
-      autocomplete="lastName"
-    />
-  </div>
-</form>
-<div class="section">
-  <pre><code>myForm.firstName().errors() ~> {{ myForm.firstName().errors() | json }}</code></pre>
-  <pre><code>myForm.lastName().disabled() ~> {{ myForm.lastName().disabled() | json }}</code></pre>
-  <pre><code>myForm.lastName().disabledReasons() ~> {{ myForm.lastName().disabledReasons() | json }}</code></pre>
-</div>
+<demo-layout>
+  <form class="demo">
+    <div class="mb-2">
+      <label class="input-label" for="firstName"> First Name </label>
+      <input
+        [field]="myForm.firstName"
+        class="input-field"
+        id="firstName"
+        type="text"
+        placeholder="First Name"
+        autocomplete="firstName"
+      />
+      @if (myForm.firstName().invalid()) {
+        <p class="input-error">Required field</p>
+      }
+    </div>
+    <div class="mb-2">
+      <label class="input-label" for="lastName"> Last Name </label>
+      <input
+        [field]="myForm.lastName"
+        class="input-field"
+        id="lastName"
+        placeholder="Last Name"
+        autocomplete="lastName"
+      />
+    </div>
+  </form>
+  <form-inspector class="inspector" [root]="myForm"></form-inspector>
+</demo-layout>

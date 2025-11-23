@@ -1,5 +1,7 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { disabled, Field, form, schema } from '@angular/forms/signals';
+import { FormInspectorComponent } from '../../../ui/form-inspector.ts/form-inspector';
+import { DemoLayout } from '../../../ui/demo-layout/demo-layout';
 
 interface MyDataModel {
   disableForm: boolean;
@@ -9,7 +11,7 @@ interface MyDataModel {
 @Component({
   selector: 'field-logic',
   templateUrl: './field-logic.html',
-  imports: [Field],
+  imports: [Field, FormInspectorComponent, DemoLayout],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FieldLogic {

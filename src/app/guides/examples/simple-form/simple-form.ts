@@ -1,6 +1,8 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { customError, email, Field, form, required, schema, submit } from '@angular/forms/signals';
 import { delay, firstValueFrom, of } from 'rxjs';
+import { FormInspectorComponent } from '../../../ui/form-inspector.ts/form-inspector';
+import { DemoLayout } from '../../../ui/demo-layout/demo-layout';
 
 interface LoginForm {
   email: string;
@@ -11,7 +13,7 @@ interface LoginForm {
   selector: 'simple-form',
   standalone: true,
   templateUrl: './simple-form.html',
-  imports: [Field],
+  imports: [Field, FormInspectorComponent, DemoLayout],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SimpleForm {

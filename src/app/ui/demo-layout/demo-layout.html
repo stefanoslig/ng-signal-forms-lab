@@ -1,0 +1,8 @@
+<div [class]="`flex flex-${layout()}`">
+  <section class="w-1/2 px-2 py-1">
+    <ng-content select=".demo"></ng-content>
+  </section>
+  <section class="w-1/2">
+    <ng-content select=".inspector"></ng-content>
+  </section>
+</div>

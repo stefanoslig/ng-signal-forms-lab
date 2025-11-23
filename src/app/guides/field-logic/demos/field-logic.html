@@ -1,16 +1,19 @@
-<form class="section">
-  <div class="mb-2 flex gap-2">
-    <input [field]="myForm.disableForm" id="disable-form-checkbox" type="checkbox" class="mb-2" />
-    <label class="input-label" for="disable-form-checkbox"> Disable Form </label>
-  </div>
-  <div class="mb-2">
-    <label class="input-label" for="username"> Username </label>
-    <input
-      [field]="myForm.username"
-      class="input-field"
-      id="username"
-      placeholder="Username"
-      autocomplete="username"
-    />
-  </div>
-</form>
+<demo-layout>
+  <form class="demo">
+    <div class="mb-2 flex gap-2">
+      <input [field]="myForm.disableForm" id="disable-form-checkbox" type="checkbox" class="mb-2" />
+      <label class="input-label" for="disable-form-checkbox"> Disable Form </label>
+    </div>
+    <div class="mb-2">
+      <label class="input-label" for="username"> Username </label>
+      <input
+        [field]="myForm.username"
+        class="input-field"
+        id="username"
+        placeholder="Username"
+        autocomplete="username"
+      />
+    </div>
+  </form>
+  <form-inspector class="inspector" [root]="myForm"></form-inspector>
+</demo-layout>
