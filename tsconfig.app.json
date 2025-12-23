@@ -5,9 +5,7 @@
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "outDir": "./out-tsc/app",
-    "types": [
-      "node"
-    ]
+    "types": ["node"]
   },
   "include": ["src/**/*.ts"],
   "exclude": ["src/**/*.spec.ts"]

@@ -18,9 +18,7 @@
           "builder": "@ng-doc/builder:application",
           "options": {
             "browser": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -46,13 +44,8 @@
                 "input": "public"
               }
             ],
-            "styles": [
-              "node_modules/@ng-doc/app/styles/global.css",
-              "src/styles.scss"
-            ],
-            "allowedCommonJsDependencies": [
-              "@ng-doc/core"
-            ],
+            "styles": ["node_modules/@ng-doc/app/styles/global.css", "src/styles.scss"],
+            "allowedCommonJsDependencies": ["@ng-doc/core"],
             "server": "src/main.server.ts",
             "outputMode": "server",
             "ssr": {
