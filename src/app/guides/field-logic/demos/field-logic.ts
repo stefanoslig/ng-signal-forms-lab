@@ -21,11 +21,11 @@ export class FieldLogic {
       username: 'My username',
     }),
     schema<MyDataModel>((schemaPath) => {
-      disabled(schemaPath.username, ({ valueOf, stateOf, field, value, key, fieldTreeOf }) => {
+      disabled(schemaPath.username, ({ valueOf, stateOf, fieldTree, value, key, fieldTreeOf }) => {
         console.log('Field Context:', {
           valueOf: valueOf(schemaPath.disableForm),
           stateOf: stateOf(schemaPath.disableForm),
-          field: field(),
+          fieldTree: fieldTree(),
           value: value(),
           key: key(),
           fieldTreeOf: fieldTreeOf(schemaPath.disableForm),
