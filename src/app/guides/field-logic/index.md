@@ -37,7 +37,7 @@ Here is an overview of how all these are connected:
 
 #### Conditionally applied field logic 🚧
 
-
+The field logic can be applied conditionally using the `applyWhen` 
 
 #### Built-in logic logic binding functions 🚧
 

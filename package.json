@@ -9,7 +9,8 @@
     "test": "ng test",
     "lint": "eslint . --ext .ts,.html",
     "lint:fix": "eslint . --ext .ts,.html --fix",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "serve:ssr:ng-signal-forms-lab": "node dist/ng-signal-forms-lab/server/server.mjs"
   },
   "prettier": {
     "printWidth": 100,
@@ -31,12 +32,15 @@
     "@angular/core": "^21.0.6",
     "@angular/forms": "21.0.6",
     "@angular/platform-browser": "^21.0.6",
+    "@angular/platform-server": "^21.0.6",
     "@angular/router": "21.0.6",
+    "@angular/ssr": "^21.0.4",
     "@ng-doc/app": "21.0.0",
     "@ng-doc/builder": "21.0.0",
     "@ng-doc/core": "21.0.0",
     "@ng-doc/ui-kit": "21.0.0",
     "@tailwindcss/postcss": "^4.1.16",
+    "express": "^5.1.0",
     "postcss": "^8.5.6",
     "rxjs": "~7.8.0",
     "tailwindcss": "^4.1.16",
@@ -44,14 +48,16 @@
     "zone.js": "~0.15.0"
   },
   "devDependencies": {
+    "@angular-devkit/build-angular": "^21.0.4",
     "@angular-eslint/eslint-plugin": "21.1.0",
     "@angular-eslint/eslint-plugin-template": "21.1.0",
-    "@angular-devkit/build-angular": "^21.0.4",
     "@angular/build": "^21.0.4",
     "@angular/cli": "^21.0.4",
     "@angular/compiler-cli": "^21.0.6",
     "@eslint/js": "^9.38.0",
+    "@types/express": "^5.0.1",
     "@types/jasmine": "~5.1.0",
+    "@types/node": "^20.17.19",
     "eslint": "^9.38.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.4",
