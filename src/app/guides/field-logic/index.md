@@ -59,9 +59,9 @@ Here is a list of all the available built-in logic binding functions:
 
 ### Schema composition 🚧
 
-Imagine building a shipping form for a logistics platform (e.g. FedEx). While building this form, you would very quickly start to encounter a few challenges. The form would naturally grow very large—especially when handling international shipments, where many additional fields are required to comply with different regulations.
+Imagine building a shipping form for a logistics platform (e.g. FedEx). While building this form, you would very quickly start to encounter a few challenges. The form would naturally grow very large, especially when handling international shipments, where many additional fields are required to comply with different regional regulations.
 
-In such cases, it becomes important to split validation and logic rules into smaller, more readable schema blocks that can be composed together when building the form (for example, one schema definition for contact details and another for package details). Additionally, we often want to reuse the same schema for repeated form structures, such as recipient details and sender details.
+In such cases, it becomes important to split validation and logic rules into smaller, more readable schema blocks that can be composed together when building the form (for example, one schema definition for the contact details data structure and another for the package details data structure). Additionally, we often want to reuse the same schema for common form structures, such as recipient details and sender details.
 
 Angular Signal Forms give us the tools to build complex validation and logic rules by composing smaller, reusable schema blocks. These tools are the following functions:
 
@@ -71,6 +71,9 @@ Angular Signal Forms give us the tools to build complex validation and logic rul
 | `applyWhen()`          | Conditionally apply a schema                         |
 | `applyEach()`          | Apply a schema to every item in an array or object   |
 | `applyWhenValue()`     | Apply a schema when the value matches a condition    |
+
+#### Apply a schema to a specific path - apply()
+
 
 
 ### Custom validators 🚧
