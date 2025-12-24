@@ -55,9 +55,23 @@ Here is a list of all the available built-in logic binding functions:
 | maxLength              | Binds logic that validates if a string or array meets a maximum length.     |
 | pattern                | Binds logic that validates if a string matches a specific regular expression. |
 | email                  | Binds logic that validates if a string matches standard email formatting.   |
-| validateStandardSchema | Binds a Standard Schema (e.g., Zod) validator to the field. 
+| validateStandardSchema | Binds a Standard Schema (e.g. Zod) validator to the field. 
 
 ### Schema composition 🚧
+
+Imagine building a shipping form for a logistics platform (e.g. FedEx). While building this form, you would very quickly start to encounter a few challenges. The form would naturally grow very large—especially when handling international shipments, where many additional fields are required to comply with different regulations.
+
+In such cases, it becomes important to split validation and logic rules into smaller, more readable schema blocks that can be composed together when building the form (for example, one schema definition for contact details and another for package details). Additionally, we often want to reuse the same schema for repeated form structures, such as recipient details and sender details.
+
+Angular Signal Forms give us the tools to build complex validation and logic rules by composing smaller, reusable schema blocks. These tools are the following functions:
+
+| Schema composition API | Description                                          |
+|------------------------|------------------------------------------------------|
+| `apply()`              | Apply a schema to a specific path                    |
+| `applyWhen()`          | Conditionally apply a schema                         |
+| `applyEach()`          | Apply a schema to every item in an array or object   |
+| `applyWhenValue()`     | Apply a schema when the value matches a condition    |
+
 
 ### Custom validators 🚧
 
