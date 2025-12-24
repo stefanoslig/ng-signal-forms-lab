@@ -30,15 +30,18 @@ import { FieldNode } from './types';
           <div>hidden: {{ node().hidden() }}</div>
           <div>readonly: {{ node().readonly() }}</div>
           <div>disabled: {{ node().disabled() }}</div>
-          <div>
-            <pre><code>reasons: {{ node().disabledReasons() | json }}</code></pre>
-          </div>
-          <div>
-            <pre><code>errors: {{ node().errors() | json }}</code></pre>
-          </div>
-          <div>
-            <pre><code>errorSummary: {{ node().errorSummary() | json }}</code></pre>
-          </div>
+          <details>
+            <summary>disabledReasons: ({{ node().disabledReasons().length }})</summary>
+            <pre><code>{{ node().disabledReasons() | json }}</code></pre>
+          </details>
+          <details>
+            <summary>errors: ({{ node().errors().length }})</summary>
+            <pre><code>{{ node().errors() | json }}</code></pre>
+          </details>
+          <details>
+            <summary>errorSummary: ({{ node().errorSummary().length }})</summary>
+            <pre><code>{{ node().errorSummary() | json }}</code></pre>
+          </details>
           <div>
             <pre><code>meta: {{
                 {

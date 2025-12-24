@@ -31,31 +31,31 @@ To attach logic functions to a field, Angular provides several built-in `logic b
 
 Here is an overview of how all these are connected:
 
-![Create form](assets/images/field-logic.png "Create form")
+![Create form](assets/images/field-logic.png 'Create form')
 
 {{ NgDocActions.demo("FieldLogic", {expanded: true}) }}
 
 Here is a list of all the available built-in logic binding functions:
 
-| Logic Binding Function       | Description |
-|------------------------------|-------------|
-| disabled               | Binds logic that reactively determines whether the field is disabled.       |
-| hidden                 | Binds logic that reactively determines whether the field is hidden.         |
-| readonly               | Binds logic that reactively determines whether the field is read-only.      |
-| debounce               | Binds logic that delays the synchronization of values from the UI control to the model. |
-| metadata               | Binds logic that calculates and attaches custom metadata values to the field. |
-| validate               | Binds a synchronous validation function to the field.                       |
+| Logic Binding Function | Description                                                                                    |
+| ---------------------- | ---------------------------------------------------------------------------------------------- |
+| disabled               | Binds logic that reactively determines whether the field is disabled.                          |
+| hidden                 | Binds logic that reactively determines whether the field is hidden.                            |
+| readonly               | Binds logic that reactively determines whether the field is read-only.                         |
+| debounce               | Binds logic that delays the synchronization of values from the UI control to the model.        |
+| metadata               | Binds logic that calculates and attaches custom metadata values to the field.                  |
+| validate               | Binds a synchronous validation function to the field.                                          |
 | validateTree           | Binds a synchronous validation function that can apply errors to the field or its descendants. |
-| validateAsync          | Binds an asynchronous validation function (using a Resource) to the field. |
-| validateHttp           | Binds logic that triggers an HTTP request to validate the field.            |
-| required               | Binds a validator that checks if the field has a non-empty value.           |
-| min                    | Binds logic that validates if a numeric value meets a minimum threshold.    |
-| max                    | Binds logic that validates if a numeric value meets a maximum threshold.    |
-| minLength              | Binds logic that validates if a string or array meets a minimum length.     |
-| maxLength              | Binds logic that validates if a string or array meets a maximum length.     |
-| pattern                | Binds logic that validates if a string matches a specific regular expression. |
-| email                  | Binds logic that validates if a string matches standard email formatting.   |
-| validateStandardSchema | Binds a Standard Schema (e.g. Zod) validator to the field. 
+| validateAsync          | Binds an asynchronous validation function (using a Resource) to the field.                     |
+| validateHttp           | Binds logic that triggers an HTTP request to validate the field.                               |
+| required               | Binds a validator that checks if the field has a non-empty value.                              |
+| min                    | Binds logic that validates if a numeric value meets a minimum threshold.                       |
+| max                    | Binds logic that validates if a numeric value meets a maximum threshold.                       |
+| minLength              | Binds logic that validates if a string or array meets a minimum length.                        |
+| maxLength              | Binds logic that validates if a string or array meets a maximum length.                        |
+| pattern                | Binds logic that validates if a string matches a specific regular expression.                  |
+| email                  | Binds logic that validates if a string matches standard email formatting.                      |
+| validateStandardSchema | Binds a Standard Schema (e.g. Zod) validator to the field.                                     |
 
 ### Schema composition 🚧
 
@@ -65,19 +65,17 @@ In such cases, it becomes important to split validation and logic rules into sma
 
 Angular Signal Forms give us the tools to build complex validation and logic rules by composing smaller, reusable schema blocks. These tools are the following functions:
 
-| Schema composition API | Description                                          |
-|------------------------|------------------------------------------------------|
-| `apply()`              | Apply a schema to a specific path                    |
-| `applyWhen()`          | Conditionally apply a schema                         |
-| `applyEach()`          | Apply a schema to every item in an array or object   |
-| `applyWhenValue()`     | Apply a schema when the value matches a condition    |
+| Schema composition API | Description                                        |
+| ---------------------- | -------------------------------------------------- |
+| `apply()`              | Apply a schema to a specific path                  |
+| `applyWhen()`          | Conditionally apply a schema                       |
+| `applyEach()`          | Apply a schema to every item in an array or object |
+| `applyWhenValue()`     | Apply a schema when the value matches a condition  |
 
 #### Apply a schema to a specific path - apply()
 
-
+{{ NgDocActions.demo("ApplyLogic", {expanded: true}) }}
 
 ### Custom validators 🚧
 
 ### Async validation 🚧
-
-
