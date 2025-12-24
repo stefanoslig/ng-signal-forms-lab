@@ -9,7 +9,7 @@ One of the most important concepts in the Angular Signal Forms is the `Data Mode
 
 Also, when creating a Signal Form, the resulting form structure (FieldTree) will match the shape of the `Data Model`.
 
-![Create form](assets/images/create-form.png)
+![Create form](assets/images/create-form.png 'Create form')
 
 > **Note**
 > If the `form()` factory is not defined inside an injection context (e.g contructor), an injector can be passed in the form options object. `form(signal({username: ''}, {injector: this.injector}));`.
@@ -51,7 +51,7 @@ To add logic like this to our form we need to use a `Schema`. In the `Schema` we
 > **Note**
 > `FieldPath<T>` is an object that represents a location in the `FieldTree` form structure and is used to bind logic to a particular part of the structure prior to the creation of the form.
 
-![Create Schema](assets/images/form-schema.png)
+![Create Schema](assets/images/form-schema.png 'Create Schema')
 
 **_We explore the `*FieldLogicPage` topic in depth in the next page, with additional examples and detailed explanations._**
 

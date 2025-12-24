@@ -31,7 +31,7 @@ To attach logic functions to a field, Angular provides several `logic binding fu
 
 Here is an overview of how all these are connected:
 
-![Create form](assets/images/field-logic.png)
+![Create form](assets/images/field-logic.png "Create form")
 
 {{ NgDocActions.demo("FieldLogic", {expanded: true}) }}
 

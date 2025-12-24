@@ -24,6 +24,7 @@
             "assets": [
               "src/assets",
               "src/favicon.ico",
+              "src/robots.txt",
               {
                 "glob": "**/*",
                 "input": "node_modules/@ng-doc/app/assets",
