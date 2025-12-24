@@ -27,7 +27,7 @@ Each `logic function` receives a `FieldContext` as input. The `FieldContext` is 
 
 ### Logic Binding Functions
 
-To attach logic functions to a field, Angular provides several `logic binding functions` (e.g. `validate()`, `required()`, `disabled()`). These binding functions allow you to register your logic functions declaratively and control the field’s behavior as part of the schema.
+To attach logic functions to a field, Angular provides several built-in `logic binding functions` (e.g. `validate()`, `required()`, `disabled()`). These binding functions allow you to register your logic functions declaratively and control the field’s behavior as part of the schema.
 
 Here is an overview of how all these are connected:
 
@@ -35,14 +35,32 @@ Here is an overview of how all these are connected:
 
 {{ NgDocActions.demo("FieldLogic", {expanded: true}) }}
 
-#### Conditionally applied field logic 🚧
+Here is a list of all the available built-in logic binding functions:
 
-The field logic can be applied conditionally using the `applyWhen`
+| Logic Binding Function | Description |
+|------------------------|-------------|
+| `disabled` | Binds logic to conditionally disable a field |
+| `hidden` | Binds logic to conditionally hide a field |
+| `readonly` | Binds logic to a field to conditionally make it read-only, preventing user modifications while still including it in form state. |
+| `debounce` | Adds debouncing to a field's value changes, delaying updates by UI events by a specified duration. |
+| `metadata` | Attaches custom metadata to a field |
+| `validate` | Adds synchronous custom validation logic to a field. |
+| `validateTree` | Adds validation logic that can return errors for the field or the child fields |
+| `validateAsync` | Adds asynchronous validation logic |
+| `validateHttp` | Adds HTTP-based async validation, making requests to validate field values. |
+| `required` | Binds logic to conditionally mark a field as required |
+| `min` | Validates that a numeric value is at least a minimum value. |
+| `max` | Validates that a numeric value is at most a maximum value. |
+| `minLength` | Validates that a string/array/set has at least a minimum length. |
+| `maxLength` | Validates that a string/array/set has at most a maximum length. |
+| `pattern` | Validates that a string matches a regular expression pattern. |
+| `email` | Validates that a string is a valid email format. |
+| `validateStandardSchema` | Validates using a Standard Schema (v1) compatible library like Zod |
 
-#### Built-in logic logic binding functions 🚧
+### Schema composition 🚧
 
 ### Custom validators 🚧
 
 ### Async validation 🚧
 
-### Schema composition 🚧
+
