@@ -37,25 +37,25 @@ Here is an overview of how all these are connected:
 
 Here is a list of all the available built-in logic binding functions:
 
-| Logic Binding Function | Description |
-|------------------------|-------------|
-| `disabled` | Binds logic to conditionally disable a field |
-| `hidden` | Binds logic to conditionally hide a field |
-| `readonly` | Binds logic to a field to conditionally make it read-only, preventing user modifications while still including it in form state. |
-| `debounce` | Adds debouncing to a field's value changes, delaying updates by UI events by a specified duration. |
-| `metadata` | Attaches custom metadata to a field |
-| `validate` | Adds synchronous custom validation logic to a field. |
-| `validateTree` | Adds validation logic that can return errors for the field or the child fields |
-| `validateAsync` | Adds asynchronous validation logic |
-| `validateHttp` | Adds HTTP-based async validation, making requests to validate field values. |
-| `required` | Binds logic to conditionally mark a field as required |
-| `min` | Validates that a numeric value is at least a minimum value. |
-| `max` | Validates that a numeric value is at most a maximum value. |
-| `minLength` | Validates that a string/array/set has at least a minimum length. |
-| `maxLength` | Validates that a string/array/set has at most a maximum length. |
-| `pattern` | Validates that a string matches a regular expression pattern. |
-| `email` | Validates that a string is a valid email format. |
-| `validateStandardSchema` | Validates using a Standard Schema (v1) compatible library like Zod |
+| Logic Binding Function       | Description |
+|------------------------------|-------------|
+| disabled               | Binds logic that reactively determines whether the field is disabled.       |
+| hidden                 | Binds logic that reactively determines whether the field is hidden.         |
+| readonly               | Binds logic that reactively determines whether the field is read-only.      |
+| debounce               | Binds logic that delays the synchronization of values from the UI control to the model. |
+| metadata               | Binds logic that calculates and attaches custom metadata values to the field. |
+| validate               | Binds a synchronous validation function to the field.                       |
+| validateTree           | Binds a synchronous validation function that can apply errors to the field or its descendants. |
+| validateAsync          | Binds an asynchronous validation function (using a Resource) to the field. |
+| validateHttp           | Binds logic that triggers an HTTP request to validate the field.            |
+| required               | Binds a validator that checks if the field has a non-empty value.           |
+| min                    | Binds logic that validates if a numeric value meets a minimum threshold.    |
+| max                    | Binds logic that validates if a numeric value meets a maximum threshold.    |
+| minLength              | Binds logic that validates if a string or array meets a minimum length.     |
+| maxLength              | Binds logic that validates if a string or array meets a maximum length.     |
+| pattern                | Binds logic that validates if a string matches a specific regular expression. |
+| email                  | Binds logic that validates if a string matches standard email formatting.   |
+| validateStandardSchema | Binds a Standard Schema (e.g., Zod) validator to the field. 
 
 ### Schema composition 🚧
 
