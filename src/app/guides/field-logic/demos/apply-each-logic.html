@@ -1,0 +1,64 @@
+<demo-layout>
+  <form class="demo">
+    <button
+      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mb-4"
+      type="button"
+      (click)="addPackage()"
+    >
+      + Add Package
+    </button>
+    <fieldset>
+      <legend>Packages</legend>
+      @for (item of shippingForm.packages; track item; let idx = $index) {
+        <div class="mb-2">
+          <label class="input-label" for="description-{{ idx }}"> Description </label>
+          <input
+            [field]="item.description"
+            class="input-field"
+            id="description-{{ idx }}"
+            type="text"
+            placeholder="Description"
+            autocomplete="description"
+          />
+        </div>
+        <fieldset class="flex">
+          <legend>Dimensions</legend>
+          <div class="mb-2 mr-2">
+            <label class="input-label" for="length-{{ idx }}"> Length </label>
+            <input
+              [field]="item.dimensions.length"
+              class="input-field"
+              id="length-{{ idx }}"
+              type="number"
+              placeholder="length"
+              autocomplete="length"
+            />
+          </div>
+          <div class="mb-2 mr-2">
+            <label class="input-label" for="width-{{ idx }}"> Width </label>
+            <input
+              [field]="item.dimensions.width"
+              class="input-field"
+              id="width-{{ idx }}"
+              type="number"
+              placeholder="width"
+              autocomplete="width"
+            />
+          </div>
+          <div class="mb-2">
+            <label class="input-label" for="height-{{ idx }}"> Height </label>
+            <input
+              [field]="item.dimensions.height"
+              class="input-field"
+              id="height-{{ idx }}"
+              type="number"
+              placeholder="height"
+              autocomplete="height"
+            />
+          </div>
+        </fieldset>
+      }
+    </fieldset>
+  </form>
+  <form-inspector class="inspector" [root]="shippingForm"></form-inspector>
+</demo-layout>

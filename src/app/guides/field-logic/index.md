@@ -57,7 +57,7 @@ Here is a list of all the available built-in logic binding functions:
 | email                  | Binds logic that validates if a string matches standard email formatting.                      |
 | validateStandardSchema | Binds a Standard Schema (e.g. Zod) validator to the field.                                     |
 
-### Schema composition 🚧
+### Schema composition
 
 Imagine building a shipping form for a logistics platform (e.g. FedEx). While building this form, you would very quickly start to encounter a few challenges. The form would naturally grow very large, especially when handling international shipments, where many additional fields are required to comply with different regional regulations.
 
@@ -69,10 +69,10 @@ Angular Signal Forms give us the tools to build complex validation and logic rul
 | ---------------------- | -------------------------------------------------- |
 | `apply()`              | Apply a schema to a specific path                  |
 | `applyWhen()`          | Conditionally apply a schema                       |
-| `applyEach()`          | Apply a schema to every item in an array or object |
 | `applyWhenValue()`     | Apply a schema when the value matches a condition  |
+| `applyEach()`          | Apply a schema to every item in an array or object |
 
-#### Apply a schema to a specific path - apply()
+#### Apply a schema to a specific path - apply() 🚧
 
 We can create reusable chunks of schema and bind them to a specific path within a parent schema definition. This is especially useful when parts of a form share the same data structure and logic.
 
@@ -81,6 +81,10 @@ For example, in the shipping form, both the sender and recipient address details
 When doing so, the child schemas are merged into the parent form schema. This allows the parent schema to still define its own logic. For instance, in the following example, the parent schema defines a metadata logic function, while the address-specific logic is provided by the reusable child schema.
 
 {{ NgDocActions.demo("ApplyLogic", {expanded: true}) }}
+
+#### Apply a schema to every item in an array or object - applyEach() 🚧
+
+{{ NgDocActions.demo("ApplyEachLogic", {expanded: true}) }}
 
 ### Custom validators 🚧
 
