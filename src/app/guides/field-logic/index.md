@@ -72,7 +72,7 @@ Angular Signal Forms give us the tools to build complex validation and logic rul
 | `applyWhenValue()`     | Apply a schema when the value matches a condition  |
 | `applyEach()`          | Apply a schema to every item in an array or object |
 
-#### Apply a schema to a specific path - apply() 🚧
+#### Apply a schema to a specific path - apply()
 
 We can create reusable chunks of schema and bind them to a specific path within a parent schema definition. This is especially useful when parts of a form share the same data structure and logic.
 
