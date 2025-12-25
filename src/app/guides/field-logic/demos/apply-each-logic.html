@@ -20,9 +20,11 @@
             placeholder="Description"
             autocomplete="description"
           />
+          @for (error of shippingForm.packages[idx].description().errors(); track $index) {
+            <p class="input-error">{{ error.message }}</p>
+          }
         </div>
-        <fieldset class="flex">
-          <legend>Dimensions</legend>
+        <div class="flex">
           <div class="mb-2 mr-2">
             <label class="input-label" for="length-{{ idx }}"> Length </label>
             <input
@@ -56,7 +58,25 @@
               autocomplete="height"
             />
           </div>
-        </fieldset>
+          @for (error of shippingForm.packages[idx].dimensions().errors(); track $index) {
+            <p class="input-error">{{ error.message }}</p>
+          }
+        </div>
+        <div class="mb-2 mr-2">
+          <label class="input-label" for="weight-{{ idx }}"> Weight </label>
+          <input
+            [field]="item.weight"
+            class="input-field"
+            id="weight-{{ idx }}"
+            type="number"
+            placeholder="weight"
+            autocomplete="weight"
+          />
+          @for (error of shippingForm.packages[idx].weight().errors(); track $index) {
+            <p class="input-error">{{ error.message }}</p>
+          }
+        </div>
+        <hr class="my-4 border-gray-300" />
       }
     </fieldset>
   </form>

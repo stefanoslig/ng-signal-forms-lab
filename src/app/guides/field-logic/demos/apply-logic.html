@@ -15,46 +15,65 @@
           placeholder="Name"
           autocomplete="name"
         />
+        @for (error of shippingForm.sender.name().errors(); track $index) {
+          <p class="input-error">{{ error.message }}</p>
+        }
       </div>
-      <div class="mb-2">
-        <label class="input-label" for="country"> Country </label>
-        <input
-          [field]="shippingForm.sender.address.country"
-          class="input-field"
-          id="address-country"
-          placeholder="Country"
-          autocomplete="address-country"
-        />
+      <div class="flex">
+        <div class="mb-2 mr-2">
+          <label class="input-label" for="country"> Country </label>
+          <input
+            [field]="shippingForm.sender.address.country"
+            class="input-field"
+            id="address-country"
+            placeholder="Country"
+            autocomplete="address-country"
+          />
+          @for (error of shippingForm.sender.address.country().errors(); track $index) {
+            <p class="input-error">{{ error.message }}</p>
+          }
+        </div>
+        <div class="mb-2 mr-2">
+          <label class="input-label" for="address-city"> City </label>
+          <input
+            [field]="shippingForm.sender.address.city"
+            class="input-field"
+            id="address-city"
+            placeholder="City"
+            autocomplete="address-city"
+          />
+          @for (error of shippingForm.sender.address.city().errors(); track $index) {
+            <p class="input-error">{{ error.message }}</p>
+          }
+        </div>
       </div>
-      <div>
-        <label class="input-label" for="address-city"> City </label>
-        <input
-          [field]="shippingForm.sender.address.city"
-          class="input-field"
-          id="address-city"
-          placeholder="City"
-          autocomplete="address-city"
-        />
-      </div>
-      <div>
-        <label class="input-label" for="address-postal"> Postal Code </label>
-        <input
-          [field]="shippingForm.sender.address.postalCode"
-          class="input-field"
-          id="address-postal-code"
-          placeholder="Postal Code"
-          autocomplete="address-postal-code"
-        />
-      </div>
-      <div class="mb-2">
-        <label class="input-label" for="address"> Street </label>
-        <input
-          [field]="shippingForm.sender.address.street"
-          class="input-field"
-          id="address-street"
-          placeholder="Street"
-          autocomplete="address-street"
-        />
+      <div class="flex">
+        <div class="mb-2 mr-2">
+          <label class="input-label" for="address-postal"> Postal Code </label>
+          <input
+            [field]="shippingForm.sender.address.postalCode"
+            class="input-field"
+            id="address-postal-code"
+            placeholder="Postal Code"
+            autocomplete="address-postal-code"
+          />
+          @for (error of shippingForm.sender.address.postalCode().errors(); track $index) {
+            <p class="input-error">{{ error.message }}</p>
+          }
+        </div>
+        <div class="mb-2 mr-2">
+          <label class="input-label" for="address"> Street </label>
+          <input
+            [field]="shippingForm.sender.address.street"
+            class="input-field"
+            id="address-street"
+            placeholder="Street"
+            autocomplete="address-street"
+          />
+          @for (error of shippingForm.sender.address.street().errors(); track $index) {
+            <p class="input-error">{{ error.message }}</p>
+          }
+        </div>
       </div>
     </fieldset>
     <fieldset>
@@ -69,46 +88,65 @@
           placeholder="Name"
           autocomplete="name"
         />
+        @for (error of shippingForm.recipient.name().errors(); track $index) {
+          <p class="input-error">{{ error.message }}</p>
+        }
       </div>
-      <div class="mb-2">
-        <label class="input-label" for="country"> Country </label>
-        <input
-          [field]="shippingForm.recipient.address.country"
-          class="input-field"
-          id="address-country"
-          placeholder="Country"
-          autocomplete="address-country"
-        />
+      <div class="flex">
+        <div class="mb-2 mr-2">
+          <label class="input-label" for="country"> Country </label>
+          <input
+            [field]="shippingForm.recipient.address.country"
+            class="input-field"
+            id="address-country"
+            placeholder="Country"
+            autocomplete="address-country"
+          />
+          @for (error of shippingForm.recipient.address.country().errors(); track $index) {
+            <p class="input-error">{{ error.message }}</p>
+          }
+        </div>
+        <div class="mb-2 mr-2">
+          <label class="input-label" for="address-city"> City </label>
+          <input
+            [field]="shippingForm.recipient.address.city"
+            class="input-field"
+            id="address-city"
+            placeholder="City"
+            autocomplete="address-city"
+          />
+          @for (error of shippingForm.recipient.address.city().errors(); track $index) {
+            <p class="input-error">{{ error.message }}</p>
+          }
+        </div>
       </div>
-      <div>
-        <label class="input-label" for="address-city"> City </label>
-        <input
-          [field]="shippingForm.recipient.address.city"
-          class="input-field"
-          id="address-city"
-          placeholder="City"
-          autocomplete="address-city"
-        />
-      </div>
-      <div>
-        <label class="input-label" for="address-postal"> Postal Code </label>
-        <input
-          [field]="shippingForm.recipient.address.postalCode"
-          class="input-field"
-          id="address-postal-code"
-          placeholder="Postal Code"
-          autocomplete="address-postal-code"
-        />
-      </div>
-      <div class="mb-2">
-        <label class="input-label" for="address"> Street </label>
-        <input
-          [field]="shippingForm.recipient.address.street"
-          class="input-field"
-          id="address-street"
-          placeholder="Street"
-          autocomplete="address-street"
-        />
+      <div class="flex">
+        <div class="mb-2 mr-2">
+          <label class="input-label" for="address-postal"> Postal Code </label>
+          <input
+            [field]="shippingForm.recipient.address.postalCode"
+            class="input-field"
+            id="address-postal-code"
+            placeholder="Postal Code"
+            autocomplete="address-postal-code"
+          />
+          @for (error of shippingForm.recipient.address.postalCode().errors(); track $index) {
+            <p class="input-error">{{ error.message }}</p>
+          }
+        </div>
+        <div class="mb-2 mr-2">
+          <label class="input-label" for="address"> Street </label>
+          <input
+            [field]="shippingForm.recipient.address.street"
+            class="input-field"
+            id="address-street"
+            placeholder="Street"
+            autocomplete="address-street"
+          />
+          @for (error of shippingForm.recipient.address.street().errors(); track $index) {
+            <p class="input-error">{{ error.message }}</p>
+          }
+        </div>
       </div>
     </fieldset>
   </form>
