@@ -1,5 +1,8 @@
 <demo-layout>
   <form class="demo">
+    @if (shippingForm().metadata(SAME_COUNTRY)?.()) {
+      <strong>Info:</strong> Domestic shipping.
+    }
     <fieldset>
       <legend>Sender</legend>
       <div class="mb-2">

@@ -1,5 +1,14 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
-import { apply, Field, form, minLength, required, schema } from '@angular/forms/signals';
+import {
+  apply,
+  createMetadataKey,
+  Field,
+  form,
+  metadata,
+  minLength,
+  required,
+  schema,
+} from '@angular/forms/signals';
 import { FormInspectorComponent } from '../../../ui/form-inspector.ts/form-inspector';
 import { DemoLayout } from '../../../ui/demo-layout/demo-layout';
 
@@ -36,6 +45,7 @@ const addressContactSchema = schema<AddressContact>((addressPath) => {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ApplyLogic {
+  protected readonly SAME_COUNTRY = createMetadataKey<boolean>();
   protected readonly shippingForm = form(
     signal<ShippingFormModel>({
       sender: {
@@ -50,6 +60,11 @@ export class ApplyLogic {
     schema<ShippingFormModel>((shippingPath) => {
       apply(shippingPath.sender, addressContactSchema);
       apply(shippingPath.recipient, addressContactSchema);
+      metadata(shippingPath, this.SAME_COUNTRY, ({ valueOf }) => {
+        const senderCountry = valueOf(shippingPath.sender.address.country);
+        const recipientCountry = valueOf(shippingPath.recipient.address.country);
+        return senderCountry === recipientCountry && senderCountry !== '';
+      });
     }),
   );
 }

@@ -74,6 +74,12 @@ Angular Signal Forms give us the tools to build complex validation and logic rul
 
 #### Apply a schema to a specific path - apply()
 
+We can create reusable chunks of schema and bind them to a specific path within a parent schema definition. This is especially useful when parts of a form share the same data structure and logic.
+
+For example, in the shipping form, both the sender and recipient address details follow the same structure. Instead of duplicating the scehma definition, we can define a reusable child schema for address details and then bind it to the corresponding path in the parent schema.
+
+When doing so, the child schemas are merged into the parent form schema. This allows the parent schema to still define its own logic. For instance, in the following example, the parent schema defines a metadata logic function, while the address-specific logic is provided by the reusable child schema.
+
 {{ NgDocActions.demo("ApplyLogic", {expanded: true}) }}
 
 ### Custom validators 🚧
