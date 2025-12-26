@@ -86,6 +86,10 @@ When doing so, the child schemas are merged into the parent form schema. This al
 
 {{ NgDocActions.demo("ApplyEachLogic", {expanded: true}) }}
 
+#### Conditionally apply a schema - applyWhen() 🚧
+
+{{ NgDocActions.demo("ApplyWhenLogic", {expanded: true}) }}
+
 ### Custom validators 🚧
 
 ### Async validation 🚧
