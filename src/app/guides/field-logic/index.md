@@ -102,6 +102,4 @@ By conditionally applying schemas with `applyWhen`, we can clearly separate the 
 
 {{ NgDocActions.demo("ApplyWhenLogic", {expanded: true}) }}
 
-### Custom validators 🚧
-
 ### Async validation 🚧
