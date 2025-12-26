@@ -90,7 +90,7 @@ As you can see in the following example, the form supports adding multiple packa
 
 {{ NgDocActions.demo("ApplyEachLogic", {expanded: true}) }}
 
-#### Conditionally apply a schema - applyWhen() 
+#### Conditionally apply a schema - applyWhen()
 
 Imagine now that the user can choose to ship either documents or packages. When documents are selected, the logic rules and validations related to dimensions should not be applied. In addition, the maximum allowed weight should be lower, for example 2 kg instead of the 30 kg limit used for regular packages.
 
@@ -98,7 +98,7 @@ In the following example, if the user first selects packages and adds a package 
 
 This happens because the `packageSchema` is no longer applied when the shipment type is document, due to the `applyWhen` predicate. Instead, only the `documentSchema` is active.
 
-By conditionally applying schemas with applyWhen, we can clearly separate the logic and validation rules for documents and packages, ensuring that only the relevant rules are active based on the user’s selection.
+By conditionally applying schemas with `applyWhen`, we can clearly separate the logic and validation rules for documents and packages, ensuring that only the relevant rules are active based on the user’s selection.
 
 {{ NgDocActions.demo("ApplyWhenLogic", {expanded: true}) }}
 
