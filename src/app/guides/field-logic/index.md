@@ -82,7 +82,11 @@ When doing so, the child schemas are merged into the parent form schema. This al
 
 {{ NgDocActions.demo("ApplyLogic", {expanded: true}) }}
 
-#### Apply a schema to every item in an array or object - applyEach() 🚧
+#### Apply a schema to every item in an array or object - applyEach()
+
+Imagine now that in the shipping form we have a dedicated section for package details. In this section, we can provide information such as the weight and the dimensions of each package. We can define the logic and validation rules for this part of the form in a child schema (`packageSchema`), which can then be reused for every package using the `applyEach()` API.
+
+As you can see in the following example, the form supports adding multiple packages, and the same `packageSchema` definition is applied to each one. The rules that are currently applied for every package are the following: the description is required, the weight is required, the package must not weigh more than 20 kilos, and the user must provide all the package dimensions.
 
 {{ NgDocActions.demo("ApplyEachLogic", {expanded: true}) }}
 
