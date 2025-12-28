@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, effect, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import {
   apply,
   applyEach,
@@ -15,6 +15,7 @@ import {
 } from '@angular/forms/signals';
 import { FormInspectorComponent } from '../../../ui/form-inspector.ts/form-inspector';
 import { DemoLayout } from '../../../ui/demo-layout/demo-layout';
+import { FieldErrors } from '../../../ui/field-errors';
 
 interface ShippingFormModel {
   shipmentType: 'document' | 'package';
@@ -77,7 +78,7 @@ const documentSchema = schema<Document>((documentPath) => {
 @Component({
   selector: 'complex-form',
   templateUrl: './complex-form.html',
-  imports: [Field, FormInspectorComponent, DemoLayout],
+  imports: [Field, FormInspectorComponent, DemoLayout, FieldErrors],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ComplexForm {

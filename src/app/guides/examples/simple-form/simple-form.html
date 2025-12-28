@@ -10,9 +10,7 @@
         placeholder="Email"
         autocomplete="email"
       />
-      @for (error of loginForm.email().errors(); track $index) {
-        <p class="input-error">{{ error.message }}</p>
-      }
+      <field-errors [fieldState]="loginForm.email()" />
     </div>
     <div class="mb-6">
       <label class="input-label" for="password"> Password </label>
@@ -24,9 +22,7 @@
         placeholder="Password"
         autocomplete="current-password"
       />
-      @for (error of loginForm.password().errors(); track $index) {
-        <p class="input-error">{{ error.message }}</p>
-      }
+      <field-errors [fieldState]="loginForm.password()" />
     </div>
     <div class="flex items-center justify-between">
       <button

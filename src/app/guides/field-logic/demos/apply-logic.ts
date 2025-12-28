@@ -11,6 +11,7 @@ import {
 } from '@angular/forms/signals';
 import { FormInspectorComponent } from '../../../ui/form-inspector.ts/form-inspector';
 import { DemoLayout } from '../../../ui/demo-layout/demo-layout';
+import { FieldErrors } from '../../../ui/field-errors';
 
 interface ShippingFormModel {
   sender: AddressContact;
@@ -41,7 +42,7 @@ const addressContactSchema = schema<AddressContact>((addressPath) => {
 @Component({
   selector: 'apply-logic',
   templateUrl: './apply-logic.html',
-  imports: [Field, FormInspectorComponent, DemoLayout],
+  imports: [Field, FormInspectorComponent, DemoLayout, FieldErrors],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ApplyLogic {

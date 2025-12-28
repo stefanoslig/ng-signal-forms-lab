@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { applyEach, Field, form, max, min, required, schema } from '@angular/forms/signals';
 import { FormInspectorComponent } from '../../../ui/form-inspector.ts/form-inspector';
 import { DemoLayout } from '../../../ui/demo-layout/demo-layout';
+import { FieldErrors } from '../../../ui/field-errors';
 
 interface ShippingFormModel {
   packages: Package[];
@@ -28,7 +29,7 @@ const packageSchema = schema<Package>((packagePath) => {
 @Component({
   selector: 'apply-each-logic',
   templateUrl: './apply-each-logic.html',
-  imports: [Field, FormInspectorComponent, DemoLayout],
+  imports: [Field, FormInspectorComponent, DemoLayout, FieldErrors],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ApplyEachLogic {

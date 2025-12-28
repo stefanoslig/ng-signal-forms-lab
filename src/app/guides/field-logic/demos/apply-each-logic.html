@@ -20,9 +20,7 @@
             placeholder="Description"
             autocomplete="description"
           />
-          @for (error of shippingForm.packages[idx].description().errors(); track $index) {
-            <p class="input-error">{{ error.message }}</p>
-          }
+          <field-errors [fieldState]="shippingForm.packages[idx].description()" />
         </div>
         <div class="flex">
           <div class="mb-2 mr-2">
@@ -58,9 +56,7 @@
               autocomplete="height"
             />
           </div>
-          @for (error of shippingForm.packages[idx].dimensions().errors(); track $index) {
-            <p class="input-error">{{ error.message }}</p>
-          }
+          <field-errors [fieldState]="shippingForm.packages[idx].dimensions()" />
         </div>
         <div class="mb-2 mr-2">
           <label class="input-label" for="weight-{{ idx }}"> Weight </label>
@@ -72,9 +68,7 @@
             placeholder="weight"
             autocomplete="weight"
           />
-          @for (error of shippingForm.packages[idx].weight().errors(); track $index) {
-            <p class="input-error">{{ error.message }}</p>
-          }
+          <field-errors [fieldState]="shippingForm.packages[idx].weight()" />
         </div>
         <hr class="my-4 border-gray-300" />
       }

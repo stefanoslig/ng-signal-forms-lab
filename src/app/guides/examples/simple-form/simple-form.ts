@@ -3,6 +3,7 @@ import { customError, email, Field, form, required, schema, submit } from '@angu
 import { delay, firstValueFrom, of } from 'rxjs';
 import { FormInspectorComponent } from '../../../ui/form-inspector.ts/form-inspector';
 import { DemoLayout } from '../../../ui/demo-layout/demo-layout';
+import { FieldErrors } from '../../../ui/field-errors';
 
 interface LoginForm {
   email: string;
@@ -13,7 +14,7 @@ interface LoginForm {
   selector: 'simple-form',
   standalone: true,
   templateUrl: './simple-form.html',
-  imports: [Field, FormInspectorComponent, DemoLayout],
+  imports: [Field, FormInspectorComponent, DemoLayout, FieldErrors],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SimpleForm {
