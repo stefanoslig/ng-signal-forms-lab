@@ -1,8 +1,6 @@
-### Ng Signal Forms Lab
-
 ### 🌐 [Angular Signal Forms Guide](https://signal-forms.guide)
 
-#### An interactive guide about the signal-based Angular forms!
+### Interactive guide + live demos for Angular Signal Forms!
 
 <img src="src/assets/images/logo-md.svg" alt="logo">
 
