@@ -10,13 +10,13 @@ One of the most important concepts in the Angular Signal Forms is the `Data Mode
 When creating a Signal Form, a structured called `FieldTree` is returned which will match the shape of the `Data Model`.
 
 > **Note**
-> The `FieldTree` is an important concept in Angular Signal Forms. It is a `Proxy` of an internal `FieldNode` structure and allows us to navigate to specific fields at runtime and access the derived state for each one of them. We will explore it more in the following sections. 
+> The `FieldTree` is an important concept in Angular Signal Forms. It is a `Proxy` of an internal `FieldNode` structure and allows us to navigate to specific fields at runtime and access the derived state for each one of them. We will explore it more in the following sections.
 
 ![Create form](assets/images/create-form.png 'Create form')
 
 > **Note**
 > If the `form()` factory is not defined inside an injection context (e.g contructor), an injector can be passed in the form options object
-`form(signal({username: ''}, {injector: this.injector}));`
+> `form(signal({username: ''}, {injector: this.injector}));`
 
 ### Binding form fields to UI elements
 
@@ -41,13 +41,13 @@ This directive will:
 
 Now that every field node is synchronized with the corresponding UI element using the `[field]` directive, we can add logic to it. We can add the follwing types of logic in our form fields.
 
-| Type of logic                       | Description                                                                  |
-| ----------------------------------- | ---------------------------------------------------------------------------- |
-| hide fields                         | Logic that determines if the field is hidden.                                |
-| disable fields                      | Logic that determines reasons for the field being disabled.                  |
-| readonly fields                     | Logic that determines if the field is read-only.                             |
-| validation errors                   | Logic that produces synchronous validation errors for the field.             |
-| validation errors (field's subtree) | Logic that produces synchronous validation errors for the field's subtree.   |
+| Type of logic                       | Description                                                                                                         |
+| ----------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
+| hide fields                         | Logic that determines if the field is hidden.                                                                       |
+| disable fields                      | Logic that determines reasons for the field being disabled.                                                         |
+| readonly fields                     | Logic that determines if the field is read-only.                                                                    |
+| validation errors                   | Logic that produces synchronous validation errors for the field.                                                    |
+| validation errors (field's subtree) | Logic that produces synchronous validation errors for the field's subtree.                                          |
 | asynchronous validation errros      | Logic that produces asynchronous validation results (errors or `'pending'` if the validation is still in progress). |
 
 To add logic like this to our form we need to use a `Schema`. In the `Schema` we declaretively define the logic of our form. You can think the `Schema` as a function that accepts a `SchemaPath` and defines the logic for it.
@@ -76,7 +76,7 @@ The `Field State` includes the following state which is derived from the `Field 
 | Field State       | Description                                                                                                      |
 | ----------------- | ---------------------------------------------------------------------------------------------------------------- |
 | `errors`          | A signal containing the current errors for the field.                                                            |
-| `invalid`         | A signal indicating whether the field is invalid.                                                                  |
+| `invalid`         | A signal indicating whether the field is invalid.                                                                |
 | `disabled`        | A signal indicating whether the field is currently disabled.                                                     |
 | `disabledReasons` | A signal containing the reasons why the field is currently disabled.                                             |
 | `max`             | A signal indicating the field's maximum value, if applicable (numeric/date inputs & custom controls).            |
