@@ -1,13 +1,11 @@
 import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
-import { FieldTree } from '@angular/forms/signals';
-import { CommonModule } from '@angular/common';
 import { FieldNode } from './types';
 import { FormNodeInspectorComponent } from './form-node-inspector';
 
 @Component({
   selector: 'form-inspector',
   standalone: true,
-  imports: [CommonModule, FormNodeInspectorComponent],
+  imports: [FormNodeInspectorComponent],
   template: `
     <section class="p-1 rounded-lg border bg-gray-950 text-gray-200">
       <header class="flex items-center justify-between gap-2 mb-3">

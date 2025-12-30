@@ -6,7 +6,7 @@ import { FieldNode } from './types';
   selector: 'form-node-inspector',
   imports: [JsonPipe],
   template: `
-    <details [open]="expandByDefault()">
+    <details [open]="expandByDefault()" class="overflow-y-auto">
       <summary class="cursor-pointer">
         <span class="font-medium">{{ label() }}</span>
         <span
