@@ -1,6 +1,6 @@
 ### 🌐 [Angular Signal Forms Guide](https://signal-forms.guide)
 
-### Interactive guide + live demos for Angular Signal Forms!
+### Interactive guide + examples for Angular Signal Forms!
 
 <img src="src/assets/images/logo-md.svg" alt="logo">
 

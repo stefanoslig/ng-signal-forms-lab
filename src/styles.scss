@@ -9,6 +9,10 @@ html[data-theme='dark'] .input-field {
   @apply text-gray-300 bg-gray-800 border-gray-400 placeholder-gray-400;
 }
 
+.input-field:disabled {
+  @apply opacity-50;
+}
+
 .input-slider {
   @apply w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer;
 }

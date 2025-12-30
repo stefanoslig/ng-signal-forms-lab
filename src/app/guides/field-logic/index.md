@@ -59,7 +59,7 @@ Here is a list of all the available built-in logic binding functions:
 
 ### Schema composition
 
-Imagine building a shipping form for a logistics platform (e.g. FedEx). While building this form, you would very quickly start to encounter a few challenges. The form would naturally grow very large, especially when handling international shipments, where many additional fields are required to comply with different regional regulations.
+Imagine building a shipping form for a logistics platform (e.g. FedEx or UPS). While building this form, you would very quickly start to encounter a few challenges. The form would naturally grow very large, especially when handling international shipments, where many additional fields are required to comply with different regional regulations.
 
 In such cases, it becomes important to split validation and logic rules into smaller, more readable schema blocks that can be composed together when building the form (for example, one schema definition for the contact details data structure and another for the package details data structure). Additionally, we often want to reuse the same schema for common form structures, such as recipient details and sender details.
 
