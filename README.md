@@ -16,7 +16,7 @@ This project serves as a comprehensive guide to Angular Signal Forms, the new re
 - [Field Logic](https://signal-forms.guide/guides/field-logic) - Learn about validation, disabled states, hidden fields, and schema composition
 - [Custom Controls](https://signal-forms.guide/guides/custom-controls) - Build custom form controls that integrate seamlessly with signal forms
 - [Real world examples](https://signal-forms.guide/guides/examples/complex-form)
-- Interactive Demos - Every concept includes live, editable examples with a Form Inspector
+- Interactive Demos - Every concept includes examples with a Form Inspector
 
 #### 🏗️ Built With
 
