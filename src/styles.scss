@@ -9,6 +9,12 @@ html[data-theme='dark'] .input-field {
   @apply text-gray-300 bg-gray-800 border-gray-400 placeholder-gray-400;
 }
 
+@media (prefers-color-scheme: dark) {
+  html[data-theme='auto'] .input-field {
+    @apply text-gray-300 bg-gray-800 border-gray-400 placeholder-gray-400;
+  }
+}
+
 .input-field:disabled {
   @apply opacity-50;
 }
@@ -33,6 +39,12 @@ html[data-theme='dark'] .input-label {
   @apply text-gray-300;
 }
 
+@media (prefers-color-scheme: dark) {
+  html[data-theme='auto'] .input-label {
+    @apply text-gray-300;
+  }
+}
+
 .btn-primary {
   @apply bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded;
 
@@ -55,6 +67,12 @@ fieldset legend {
 
 html[data-theme='dark'] fieldset legend {
   @apply text-gray-300;
+}
+
+@media (prefers-color-scheme: dark) {
+  html[data-theme='auto'] fieldset legend {
+    @apply text-gray-300;
+  }
 }
 
 .disabled {
